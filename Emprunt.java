@@ -9,9 +9,11 @@ public class Emprunt {
     public Emprunt(LocalDate D1 , LocalDate D2 , int Mat , int Type , String Titre) {
         this.DateDebut=D1;
         this.DateRt=D2;
+        this.Type=Type;
         this.Matricule=Mat;
         this.Titre=Titre;
     }
+    
 
 
    
