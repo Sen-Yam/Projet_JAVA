@@ -79,244 +79,246 @@ public class Application {
     B.MENU();
     System.out.println("Entrez votre choix");
     Choix=e.nextInt();
-    switch(Choix) {
-        case 1 :
-        B.Afficher_Media();
-        B.MENU();
-    System.out.println("Entrez votre choix");
-    Choix=e.nextInt();
-        break;
-        case 2 :
-        System.out.println("Donnez le matricule de l'adherent qui va emprunter");
-         Mat=e.nextInt();
-        System.out.println("Choisissez le numero du type du media a emprunter");
-        System.out.println("1-Livre  2-Memoire  3=CD");
-         Type=e.nextInt();
-        System.out.println("Donnez le titre du media a emprunter");
-        Titre = e.next();
-        LocalDate Debut = now;
-        LocalDate Fin = now.plusDays(10);
-        Emprunt E = new Emprunt(Debut, Fin, Mat, Type, Titre);
-        B.Add_Emprunt(E);
-        B.MENU();
-    System.out.println("Entrez votre choix");
-    Choix=e.nextInt();
-        break;
-        case 3 :
-        System.out.println("Donnez le matricule de l'adherent qui va retourner le media");
-        Mat=e.nextInt();
-       System.out.println("Choisissez le numero du type du media a retourner");
-       System.out.println("1-Livre  2-Memoire  3=CD");
-        Type=e.nextInt();
-       System.out.println("Donnez le titre du media a retourner");
-       Titre = e.next();
-        B.Retourner_Emprunt(Titre, Mat, Type);
-        B.Remove_Emprunt(Titre, Type, Mat);
-        B.MENU();
-    System.out.println("Entrez votre choix");
-    Choix=e.nextInt();
-        break;
-        case 4 :
-        System.out.println("Choisissez le numero du type du media a modifier");
-        System.out.println("1-Livre  2-Memoire  3=CD");
-         Type=e.nextInt();
-        System.out.println("Donnez le titre du media a modifier");
-        Titre = e.next();
-        System.out.println("Entrer votre choix de modification : ");
-        System.out.println("1-Modifier la cote  2-Modifier le nombre d'exemplaires");
-        C=e.nextInt();
-        if(C==1) {
-            System.out.println("Donnez la nouvelle cote");
-                Cote = e.next();
-                B.Modifier_Media_Cote(Type, Titre, Cote);
-
-        }
-        else {
-            if(C==2) {
-                System.out.println("Donnez le nombre d'exemplaire ");
-                Nbr = e.nextInt();
-                B.Modifier_Media_Nbr_Exp(Type, Titre, Nbr);
-            }
-            else {
-                System.out.println("EREUR");
-            }
-        }
-
-
-        B.MENU();
-    System.out.println("Entrez votre choix");
-    Choix=e.nextInt();
-        break;
-        case 5 :
-        System.out.println("Entrez la cote du media");
-        Cote = e.next();
-        System.out.println("Entrez le titre du media");
-        Titre=e.next();
-        System.out.println("Entrez la specialitee du media ");
-        Specialitee = e.next();
-        
-        
+    while(Choix>=1 && Choix <=13) {
+        switch(Choix) {
+            case 1 :
+            B.Afficher_Media();
+            B.MENU();
+        System.out.println("Entrez votre choix");
+        Choix=e.nextInt();
+            break;
+            case 2 :
+            System.out.println("Donnez le matricule de l'adherent qui va emprunter");
+             Mat=e.nextInt();
+            System.out.println("Choisissez le numero du type du media a emprunter");
+            System.out.println("1-Livre  2-Memoire  3=CD");
+             Type=e.nextInt();
+            System.out.println("Donnez le titre du media a emprunter");
+            Titre = e.next();
+            LocalDate Debut = now;
+            LocalDate Fin = now.plusDays(10);
+            Emprunt E = new Emprunt(Debut, Fin, Mat, Type, Titre);
+            B.Add_Emprunt(E);
+            B.MENU();
+        System.out.println("Entrez votre choix");
+        Choix=e.nextInt();
+            break;
+            case 3 :
+            System.out.println("Donnez le matricule de l'adherent qui va retourner le media");
+            Mat=e.nextInt();
+           System.out.println("Choisissez le numero du type du media a retourner");
+           System.out.println("1-Livre  2-Memoire  3=CD");
+            Type=e.nextInt();
+           System.out.println("Donnez le titre du media a retourner");
+           Titre = e.next();
+            B.Retourner_Emprunt(Titre, Mat, Type);
+            B.Remove_Emprunt(Titre, Type, Mat);
+            B.MENU();
+        System.out.println("Entrez votre choix");
+        Choix=e.nextInt();
+            break;
+            case 4 :
             System.out.println("Choisissez le numero du type du media a modifier");
             System.out.println("1-Livre  2-Memoire  3=CD");
-            Type=e.nextInt();
-            if(Type==1) {
-                System.out.println("Entrez l'edition du livre");
-                Edition=e.next();
-                System.out.println("Entrez l'auteur du livre ");
-                Auteur = e.next();
-                
-                M= new  Livre(Specialitee, Titre, Cote, 1, Edition, Auteur);
-                B.Add_Media(M);
-         }
-         else {
-             if(Type==2) {
-                System.out.println("Entrez l'auteur de la memoire ");
-                Auteur = e.next();
-                 M = new Memoire(Specialitee, Titre, Cote, 1, Auteur);
-                 B.Add_Media(M);
-             }
-             else {
-                System.out.println("Entrez le createur du CD ");
-                Auteur = e.next();
-                M = new CD(Specialitee, Titre, Cote, 1, Auteur);
-                B.Add_Media(M);
-             }
-         }
-        B.MENU();
-    System.out.println("Entrez votre choix");
-    Choix=e.nextInt();
-        break;
-        case 6 :
-
-        System.out.println("Entrez la cote du media ");
-        Cote = e.next();
-        System.out.println("Entrez le titre du media");
-        Titre=e.next();
-        System.out.println("Entrez la specialitee du media ");
-        Specialitee = e.next();
-        
-        
-            System.out.println("Choisissez le numero du type du media a modifier");
-            System.out.println("1-Livre  2-Memoire  3=CD");
-            Type=e.nextInt();
-            if(Type==1) {
-                System.out.println("Entrez l'edition du livre");
-                Edition=e.next();
-                System.out.println("Entrez l'auteur du livre ");
-                Auteur = e.next();
-                
-                M= new  Livre(Specialitee, Titre, Cote, 1, Edition, Auteur);
-                B.Remove_Media(M);
-         }
-         else {
-             if(Type==2) {
-                System.out.println("Entrez l'auteur de la memoire ");
-                Auteur = e.next();
-                 M = new Memoire(Specialitee, Titre, Cote, 1, Auteur);
-                 B.Remove_Media(M);
-
-             }
-             else {
-                System.out.println("Entrez le createur du CD ");
-                Auteur = e.next();
-                M = new CD(Specialitee, Titre, Cote, 1, Auteur);
-                B.Remove_Media(M);
-             }
-            }
-        
-
-        B.MENU();
-    System.out.println("Entrez votre choix");
-    Choix=e.nextInt();
-        break;
-        case 7 :
-            System.out.println("La liste des adherents est : ");
-            B.Afficher_Adherent();
-        B.MENU();
-    System.out.println("Entrez votre choix");
-    Choix=e.nextInt();
-        break;
-        case 8 :
-            System.out.println("Donnez le matricule de l'adherent a modifier");
-            Mat = e.nextInt();
-            System.out.println("Entrez votre Numero de choix"); 
-            System.out.println("1-Modifier le nom  2-   Modifier le prenom");
-            Choix = e.nextInt();
-            if(Choix==1) {
-                System.out.println("Donnez le nouveau nom");
-                Nom = e.next();
-                
-                B.Modifier_Adherent(Mat, Choix, Nom);
+             Type=e.nextInt();
+            System.out.println("Donnez le titre du media a modifier");
+            Titre = e.next();
+            System.out.println("Entrer votre choix de modification : ");
+            System.out.println("1-Modifier la cote  2-Modifier le nombre d'exemplaires");
+            C=e.nextInt();
+            if(C==1) {
+                System.out.println("Donnez la nouvelle cote");
+                    Cote = e.next();
+                    B.Modifier_Media_Cote(Type, Titre, Cote);
+    
             }
             else {
-                if(Choix==2) {
-                    System.out.println("Donnez le nouveau prenom");
+                if(C==2) {
+                    System.out.println("Donnez le nombre d'exemplaire ");
+                    Nbr = e.nextInt();
+                    B.Modifier_Media_Nbr_Exp(Type, Titre, Nbr);
+                }
+                else {
+                    System.out.println("EREUR");
+                }
+            }
+    
+    
+            B.MENU();
+        System.out.println("Entrez votre choix");
+        Choix=e.nextInt();
+            break;
+            case 5 :
+            System.out.println("Entrez la cote du media");
+            Cote = e.next();
+            System.out.println("Entrez le titre du media");
+            Titre=e.next();
+            System.out.println("Entrez la specialitee du media ");
+            Specialitee = e.next();
+            
+            
+                System.out.println("Choisissez le numero du type du media a modifier");
+                System.out.println("1-Livre  2-Memoire  3=CD");
+                Type=e.nextInt();
+                if(Type==1) {
+                    System.out.println("Entrez l'edition du livre");
+                    Edition=e.next();
+                    System.out.println("Entrez l'auteur du livre ");
+                    Auteur = e.next();
+                    
+                    M= new  Livre(Specialitee, Titre, Cote, 1, Edition, Auteur);
+                    B.Add_Media(M);
+             }
+             else {
+                 if(Type==2) {
+                    System.out.println("Entrez l'auteur de la memoire ");
+                    Auteur = e.next();
+                     M = new Memoire(Specialitee, Titre, Cote, 1, Auteur);
+                     B.Add_Media(M);
+                 }
+                 else {
+                    System.out.println("Entrez le createur du CD ");
+                    Auteur = e.next();
+                    M = new CD(Specialitee, Titre, Cote, 1, Auteur);
+                    B.Add_Media(M);
+                 }
+             }
+            B.MENU();
+        System.out.println("Entrez votre choix");
+        Choix=e.nextInt();
+            break;
+            case 6 :
+    
+            System.out.println("Entrez la cote du media ");
+            Cote = e.next();
+            System.out.println("Entrez le titre du media");
+            Titre=e.next();
+            System.out.println("Entrez la specialitee du media ");
+            Specialitee = e.next();
+            
+            
+                System.out.println("Choisissez le numero du type du media a modifier");
+                System.out.println("1-Livre  2-Memoire  3=CD");
+                Type=e.nextInt();
+                if(Type==1) {
+                    System.out.println("Entrez l'edition du livre");
+                    Edition=e.next();
+                    System.out.println("Entrez l'auteur du livre ");
+                    Auteur = e.next();
+                    
+                    M= new  Livre(Specialitee, Titre, Cote, 1, Edition, Auteur);
+                    B.Remove_Media(M);
+             }
+             else {
+                 if(Type==2) {
+                    System.out.println("Entrez l'auteur de la memoire ");
+                    Auteur = e.next();
+                     M = new Memoire(Specialitee, Titre, Cote, 1, Auteur);
+                     B.Remove_Media(M);
+    
+                 }
+                 else {
+                    System.out.println("Entrez le createur du CD ");
+                    Auteur = e.next();
+                    M = new CD(Specialitee, Titre, Cote, 1, Auteur);
+                    B.Remove_Media(M);
+                 }
+                }
+            
+    
+            B.MENU();
+        System.out.println("Entrez votre choix");
+        Choix=e.nextInt();
+            break;
+            case 7 :
+                System.out.println("La liste des adherents est : ");
+                B.Afficher_Adherent();
+            B.MENU();
+        System.out.println("Entrez votre choix");
+        Choix=e.nextInt();
+            break;
+            case 8 :
+                System.out.println("Donnez le matricule de l'adherent a modifier");
+                Mat = e.nextInt();
+                System.out.println("Entrez votre Numero de choix"); 
+                System.out.println("1-Modifier le nom  2-   Modifier le prenom");
+                Choix = e.nextInt();
+                if(Choix==1) {
+                    System.out.println("Donnez le nouveau nom");
                     Nom = e.next();
+                    
                     B.Modifier_Adherent(Mat, Choix, Nom);
                 }
                 else {
-                    System.out.println("error");
+                    if(Choix==2) {
+                        System.out.println("Donnez le nouveau prenom");
+                        Nom = e.next();
+                        B.Modifier_Adherent(Mat, Choix, Nom);
+                    }
+                    else {
+                        System.out.println("error");
+                    }
                 }
-            }
-        B.MENU();
-    System.out.println("Entrez votre choix");
-    Choix=e.nextInt();
-        break;
-        case 9 :
-        System.out.println("Entrez le matricule de l'adherent a ajouter");
-        Mat = e.nextInt();
-        System.out.println("Entrez le nom");
-        Nom = e.next();
-        System.out.println("Entrez le prenom");
-        Prenom = e.next();
-        Adherant H = new Adherant(Nom, Prenom, Mat);
-        B.Add_Adherant(H);
-
-        B.MENU();
-    System.out.println("Entrez votre choix");
-    Choix=e.nextInt();
-        break;
-        case 10 :
-
-        System.out.println("Entrez le matricule de l'adherent a supprimer");
-        Mat = e.nextInt();
-        System.out.println("Entrez le nom");
-        Nom = e.next();
-        System.out.println("Entrez le prenom");
-        Prenom = e.next();
-        Adherant F = new Adherant(Nom, Prenom, Mat);
-        B.Remove_Adherant(F);
-
-        B.MENU();
-    System.out.println("Entrez votre choix");
-    Choix=e.nextInt();
-        break;
-        case 11 :
-            System.out.println("La liste des emprunts est : ");
-            B.Afficher_Emprunt();
-        B.MENU();
-    System.out.println("Entrez votre choix");
-    Choix=e.nextInt();
-        break;
-        case 12 :
-            System.out.println("La liste noire est : ");
-            B.Afficher_ListeNoire();
-        B.MENU();
-    System.out.println("Entrez votre choix");
-    Choix=e.nextInt();
-        break;
-        case 13 :
-
-       System.out.println("END OF PROGRAM");
-        break;
-        default : 
-        B.MENU();
-        System.out.println("Rechoisissez votre choix entre 1 et 13 ");
+            B.MENU();
+        System.out.println("Entrez votre choix");
         Choix=e.nextInt();
-        
-
-
-
+            break;
+            case 9 :
+            System.out.println("Entrez le matricule de l'adherent a ajouter");
+            Mat = e.nextInt();
+            System.out.println("Entrez le nom");
+            Nom = e.next();
+            System.out.println("Entrez le prenom");
+            Prenom = e.next();
+            Adherant H = new Adherant(Nom, Prenom, Mat);
+            B.Add_Adherant(H);
+    
+            B.MENU();
+        System.out.println("Entrez votre choix");
+        Choix=e.nextInt();
+            break;
+            case 10 :
+    
+            System.out.println("Entrez le matricule de l'adherent a supprimer");
+            Mat = e.nextInt();
+            System.out.println("Entrez le nom");
+            Nom = e.next();
+            System.out.println("Entrez le prenom");
+            Prenom = e.next();
+            Adherant F = new Adherant(Nom, Prenom, Mat);
+            B.Remove_Adherant(F);
+    
+            B.MENU();
+        System.out.println("Entrez votre choix");
+        Choix=e.nextInt();
+            break;
+            case 11 :
+                System.out.println("La liste des emprunts est : ");
+                B.Afficher_Emprunt();
+            B.MENU();
+        System.out.println("Entrez votre choix");
+        Choix=e.nextInt();
+            break;
+            case 12 :
+                System.out.println("La liste noire est : ");
+                B.Afficher_ListeNoire();
+            B.MENU();
+        System.out.println("Entrez votre choix ");
+        Choix=e.nextInt();
+            break;
+            case 13 :
+    
+           System.out.println("END OF PROGRAM");
+            break;
+            default : 
+            B.MENU();
+            System.out.println("Rechoisissez votre choix entre 1 et 13 ");
+            Choix=e.nextInt();
+            
+    
+    
+    
+        }
     }
 
 

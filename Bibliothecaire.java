@@ -609,6 +609,7 @@ public class Bibliothecaire {
     }
 
     public void MENU() {
+        System.out.println("************MENU***************");
         System.out.println("1-Consulter la liste des media");
         System.out.println("2-Emprunter un media");
         System.out.println("3-Retourner un media");
@@ -622,6 +623,7 @@ public class Bibliothecaire {
         System.out.println("11-Consulter la liste des emprunts");
         System.out.println("12-Consulter la liste noire");
         System.out.println("13-EXIT");
+        System.out.println("*******************************");
         
         
         
