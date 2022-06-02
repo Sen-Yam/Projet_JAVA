@@ -232,6 +232,7 @@ public class Bibliothecaire {
     public void Remove_Adherant(Adherant A ) {
         if(this.Existe_Adherent(A.Matricule)==true) {
             this.A.remove(A);
+            System.out.println("Adherent supprimee");
         }
         else {
             System.out.println("Cet adherent n'existe pas !");
@@ -508,6 +509,7 @@ public class Bibliothecaire {
                     
                 }
             }
+            System.out.println("Adherent modifiee");
             
         }
        
