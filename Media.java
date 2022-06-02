@@ -5,7 +5,7 @@ abstract public class Media {
     
     
     public Media(String Specialitee , String Titre , String Cote , int Nbr_exp) {
-        this.Cote=Cote;
+        this.Cote=Cote;     // Constructeur de Media
         this.Nbr_exp=Nbr_exp;
         this.Specialitee=Specialitee;
         this.Titre=Titre;

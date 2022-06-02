@@ -7,6 +7,8 @@ import java.util.Scanner;
 public class Application {
     public static void main(String[] args) {
     Bibliothecaire B = new Bibliothecaire();
+
+        // Ajouter des Media
     Media M = new Livre("Maths", "Analyse", "b123", 1, "Page Bleue", "Laib");
     B.Add_Media(M);
     M = new CD("Maths", "Algebre", "00gh", 1, "Page Bleue");
@@ -25,7 +27,7 @@ public class Application {
     B.Add_Media(M);
     M = new CD("Informatique", "PHP", "dfr45670", 1, "Page Bleue");
     B.Add_Media(M);
-    
+    // Ajouter des adherents
     Adherant a = new Adherant ("laraba" , "yamina" , 1234);
     Adherant a1 = new Adherant ("laib" , "wissal" , 2222);
     Adherant a2 = new Adherant ("hanafi" , "yasmine" , 2223);
@@ -40,7 +42,7 @@ public class Application {
     B.Add_Adherant(a4);
     B.Add_Adherant(a5);
     B.Add_Adherant(a6);
-    
+    // LcoalDate un type de dates
     LocalDate Date1 = LocalDate.of(2022, 05, 29);
     LocalDate Date2 = LocalDate.of(2022, 04, 14);
     LocalDate Date3 = LocalDate.of(2022, 03, 20);
@@ -80,7 +82,7 @@ public class Application {
     System.out.println("Entrez votre choix");
     Choix=e.nextInt();
     boolean W = true;
-    while(W==true) {
+    while(W==true) { 
         switch(Choix) {
             case 1 :
             B.Afficher_Media();
@@ -319,19 +321,14 @@ public class Application {
             Choix=e.nextInt();
             
     
-    
+            }
     
         }
-    }
+    
 
 
 
-        // 1=Livre 2 = Memoire 3=CD
-        // 1=Nom  2=Prenom
-
-        // LocalDate.of(jr , mois ,yyyy)
-    /*LocalDate Date = LocalDate.of(2022, 05, 29);
-    System.out.println(Date); */
+ 
    
     }
     
