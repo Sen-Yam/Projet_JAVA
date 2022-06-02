@@ -79,7 +79,8 @@ public class Application {
     B.MENU();
     System.out.println("Entrez votre choix");
     Choix=e.nextInt();
-    while(Choix>=1 && Choix <=13) {
+    boolean W = true;
+    while(W==true) {
         switch(Choix) {
             case 1 :
             B.Afficher_Media();
@@ -309,8 +310,10 @@ public class Application {
             case 13 :
     
            System.out.println("END OF PROGRAM");
+           W=false;
             break;
             default : 
+            
             B.MENU();
             System.out.println("Rechoisissez votre choix entre 1 et 13 ");
             Choix=e.nextInt();
